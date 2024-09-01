@@ -1,13 +1,25 @@
 using System;
 
-namespace KiemTraChanLe
+namespace cslt
 {
     class Program
     {
         static void Main(string[] args)
-		{baitap_07();}
+		{
+		baitap_01();
+		//baitap_02();
+		//baitap_03();
+		//baitap_04();
+		//baitap_05();
+		//baitap_06();
+		//baitap_07_1();
+		//baitap_07_2();
+		//baitap_07_3();
+		//baitap_08();
+		//baitap_09();
+		}
 		
-		static void baitap_01()
+	static void baitap_01()
 		{
             Console.Write("Nhập  một số: ");
             int a = Convert.ToInt32(Console.ReadLine());
@@ -133,42 +145,87 @@ namespace KiemTraChanLe
 			}
 			Console.WriteLine();
 		}
-		static void baitap_07()
+		static void baitap_07_1()
 		{
-			int numRows = 4;
+			
+            int n = 4;
+            int i = 1;
 
-            // Vòng lặp để tạo ra các tam giác
-            for (int i = 1; i <= numRows; i++)
+            do
             {
-                // Vẽ tam giác thứ nhất
-                for (int j = 1; j <= i; j++)
-                {
-                    Console.Write(j);
-                }
-                Console.WriteLine("  ");
+                int startValue = 1; 
 
-                // Vẽ tam giác thứ hai
-                int num = i * (i - 1) / 2 + 1;
                 for (int j = 1; j <= i; j++)
                 {
-                    Console.Write(num);
-                    num++;
+                    int currentValue = j; 
+                    Console.Write(currentValue + " ");
                 }
-                Console.WriteLine("  ");
+                Console.WriteLine();
+                i++;
+            } while (i <= n);
+		}
+		static void baitap_07_2()
+		{
+			int n = 4;
+            int startValue = 1;
+		for (int i = 1; i <= n; i++)
+			{
+    			for (int j = 1; j <= i; j++)
+    			{
+        			Console.Write(startValue + " ");
+      				startValue++;
+   				}
+    	Console.WriteLine();
+			}
+		}
+		static void baitap_07_3()
+		{
+			 int n = 4;
+            int num = 1;
 
-                // Vẽ tam giác thứ ba
-                num = i * (i - 1) / 2 + 1;
+            for (int i = 1; i <= n; i++)
+            {
                 for (int j = 1; j <= i; j++)
                 {
-                    Console.Write(num);
+                    Console.Write(num + " ");
                     num++;
                 }
                 Console.WriteLine();
-			
+            }
 		}
-}
-}
-}
-	
+		static void baitap_08()
+		{
+            Console.Write("Nhập số số hạng n: ");
+            int n = int.Parse(Console.ReadLine());
+
+            double sum = 0;
+
+            for (int i = 1; i <= n; i++)
+            {sum += 1.0 / i;}
 			
-	
+            Console.WriteLine("Tổng của {0} số hạng đầu tiên của dãy harmonic là: {1}", n, sum);
+		}
+		static void baitap_09()
+		{
+			
+            Console.Write("Nhập số bắt đầu của khoảng: ");
+            int start = int.Parse(Console.ReadLine());
+
+            Console.Write("Nhập số kết thúc của khoảng: ");
+            int end = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Các số hoàn hảo trong khoảng [{0}, {1}] là:", start, end);
+
+            for (int num = start; num <= end; num++)
+            {
+                int sum = 0;
+                for (int i = 1; i < num; i++)
+                {if (num % i == 0)
+                     sum += i;}
+
+                if (sum == num)
+                Console.WriteLine(num);
+			}
+		}
+		
+	}}
