@@ -1,0 +1,35 @@
+using System;
+
+namespace ueh
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+   		int solanlap = 0;
+        int demsolanlap = 0;
+        int solan = 50000;
+        int sohien = 1000;
+		int minrd = 0;
+		int maxrd =100;
+		Random rand = new Random();
+        
+    while (demsolanlap < solan)
+    { 
+			solanlap =0;
+        
+        while ( solanlap < sohien)
+        {
+			    int showvalue = rand.Next(minrd,maxrd);
+        	Console.Write("{0,8}",showvalue);
+            
+          solanlap++;
+        }
+			Console.WriteLine();
+      demsolanlap++;
+      
+    }
+        Console.ReadKey();
+    }
+  }
+}
