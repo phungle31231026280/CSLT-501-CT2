@@ -1,0 +1,36 @@
+using System;
+namespace ConsoleApp1
+{
+  internal class MultipleArrays
+  {
+	   static void Main(string[] args)
+	   {
+		   Console.Write("Nhập 1 chuỗi: ");
+		   string str = Console.ReadLine();
+		   string val = "djd jgkgjk";
+		   int Length = str.Length;
+		   string[] split = str.Split(' ');
+		   int i = 1;
+		   Console.WriteLine("Chuỗi của bạn: " + str);
+		   Console.WriteLine("Chieu dai cua chuoi: " + Length);
+		   foreach (var word in split)
+			{
+    			Console.WriteLine($"<{word}>");
+			}
+		   int comp = String.Compare(str,val);
+		   Console.WriteLine(comp);
+		   string conc = String.Concat(str,val);
+		   Console.WriteLine(conc);
+		   int ind = str.IndexOf('q');
+		   Console.WriteLine(ind);
+		   str = str.Insert(i, val);
+		   Console.WriteLine(str);
+		   bool tralse = String.IsNullOrEmpty(str);
+		   if (tralse = true)
+			   Console.WriteLine("null");
+		   else Console.WriteLine("empty");
+		   int lastind = str.LastIndexOf('q');
+		   Console.WriteLine(lastind);
+	   }
+  }
+}
